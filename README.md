@@ -14,7 +14,7 @@ It also contains two different types of approaches of DataExtraction i.e
 By default it will run by .csv file 
 
 
-To Change it into  DATABASE APPLICATION uncomment the graph.py
+To Change it into  DATABASE APPLICATION uncomment the lines written in graph.py
 
 # INSTALLATION
 
