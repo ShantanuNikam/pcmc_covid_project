@@ -7,33 +7,43 @@ import numpy as np
 # themeing
 
 
-# dataframe
-#pcmc_data = pd.read_csv('pcmc-count-update-2.csv')
-#pie_age_data = pd.read_csv('age_count_2.csv')
-#pie_gender_data = pd.read_csv("gender_2.csv")
+#dataframe(CSV FILE DATA)
+
+pcmc_data = pd.read_csv('pcmc_count_update_2.csv')
+pie_age_data = pd.read_csv('age_count_2.csv')
+pie_gender_data = pd.read_csv("gender_2.csv")
+
+
 
 #Database Connection
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="Password@10",
-  database="covidproject"
-)
+#{
+#mydb = mysql.connector.connect(
+  #host="Server",
+  #user="username",
+  #password="userpassword",
+  #database="databasename"
+#)
+
+
 #Database dataextraction(pie_gender_data)
-mycursor = mydb.cursor()
-mycursor.execute("SELECT * FROM gender_2")
-temp=  mycursor.fetchall()
-pie_gender_data = pd.DataFrame(temp, columns =['','cat', 'count']) 
+#mycursor = mydb.cursor()
+#mycursor.execute("SELECT * FROM gender_2")
+#temp=  mycursor.fetchall()
+#pie_gender_data = pd.DataFrame(temp, columns =['','cat', 'count']) 
 
 #Database Dataextraction(pie_age_data)
-mycursor.execute("SELECT * FROM age_count_2")
-temp2=  mycursor.fetchall()
-pie_age_data= pd.DataFrame(temp2, columns =['FIELD1','cat','age', 'count']) 
-#Database Dataextraction(pcmc_data)
-mycursor.execute("SELECT * FROM pcmc_count_update_2")
-temp2=  mycursor.fetchall()
-pcmc_data= pd.DataFrame(temp2, columns =['FIELD1','date','DAY_WISE_POSITIVE_COVID_CASES','DAY_WISE_PROGRESSIVE_POSITIVE_COVID_CASES','DAY_WISE_RECOVERED_COVID_CASES']) 
+#mycursor.execute("SELECT * FROM age_count_2")
+#temp2=  mycursor.fetchall()
+#pie_age_data= pd.DataFrame(temp2, columns =['FIELD1','cat','age', 'count']) 
 
+#Database Dataextraction(pcmc_data)
+#mycursor.execute("SELECT * FROM pcmc_count_update_2")
+#temp2=  mycursor.fetchall()
+#pcmc_data= pd.DataFrame(temp2, columns =['FIELD1','date','DAY_WISE_POSITIVE_COVID_CASES','DAY_WISE_PROGRESSIVE_POSITIVE_COVID_CASES','DAY_WISE_RECOVERED_COVID_CASES']) 
+
+
+
+#}
 # pcmc day wise graph
 
 pcmc_graph = go.Figure()
